@@ -11,7 +11,7 @@ geometry:
 header-includes:
     \pagestyle{empty}
 ---
-# AIleister Cryptley, a gpt-fueled sock puppeteer
+# AIleister Cryptley, a GPT-fueled sock puppeteer
 
 Have you ever wondered how to make your sock puppet more fleshed out without any substantial work on your behalf? Now, with LLMs (large language models) to help you, it's easier than ever.
 
@@ -23,20 +23,22 @@ Imagine that you are new to OSINT, and you've heard that at some point, it would
 
 Most of us know that the LLMs can talk about literally anything now. ChatGPT even passed the Turing test a few months back. We can use it to our advantage and make it say things for our sockpuppet. Introducing: AIleister Cryptley -- a cybersec occultist. He recently started sharing pieces of gpt-generated cybersec tips on Twitter. All by himself!
 
+The plan of the game is as follows. We start by generating a message to post -- that's what ChatGPT will do for us. The output will be a ready-to-post string that we will -- after some random delay -- post on social media (Twitter in this example). This way, we will simulate the activity of an actual person on our account.
+
 ## The implementation
 
-If we know what we want to do, the rest of the project is trivial. You can even ask chat-gpt to generate it for you (and tweak it a little). First, we need to get a chat-gpt tip. We can use the following function for that.
+If we know what we want to do, the rest of the project is trivial. You can even ask ChatGPT to generate it for you (and tweak it a little). First, we need to get a ChatGPT tip. We can use the following function for that.
 ```python
 def get_tip() -> Optional[str]:
   response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo-16k",
     messages=[
       {"role": "system", "content": 
-      "You are a human knowledgeable in"
+      "You are a human knowledgeable in "
       "cybersecurity, programming and AI."},
       {"role": "user", "content":
       "Can you give me a tweet-length "
-      "cybersecurity, programming or AI tip"
+      "cybersecurity, programming or AI tip "
       "(or trivia)? It can also be a pun."}
     ]
   )
@@ -89,11 +91,11 @@ There are several things to note.
 
 * Access to OpenAI API is *not* free (that's why the script uses a cheaper gpt-3.5 model).
 
-* An extended version of the presented code can be found on my github (link in the footer). You can find the setup description and broader explanation/justification of the code in the README.
+* An extended version of the presented code can be found on my GitHub (link in the footer). You can find the setup description and broader explanation/justification of the code in the README.
 
 * The script runs have to be scheduled. You can use CRON (Linux/Mac) or Task Scheduler (Windows) to do that.
 
-* AIleister Twittter can be found [here](https://twitter.com/ACryptley).
+* AIleister's Twittter can be found [here](https://twitter.com/ACryptley).
 
 ## The disclaimer
 

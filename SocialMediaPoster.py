@@ -28,10 +28,10 @@ def get_tip() -> Optional[str]:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo-16k",
             messages=[
-                {"role": "system", "content": "You are a human knowledgeable in"
+                {"role": "system", "content": "You are a human knowledgeable in "
                                               "cybersecurity, programming and AI."},
                 {"role": "user", "content": "Can you give me a tweet-length "
-                                            "cybersecurity, programming or AI tip"
+                                            "cybersecurity, programming or AI tip "
                                             "(or trivia)? It can also be a pun."}
             ]
         )
